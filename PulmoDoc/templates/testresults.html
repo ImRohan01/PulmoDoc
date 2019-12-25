@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block title %}Test Results{% endblock %}
+
+{% block content %}
+<h2>Test Results</h2>
+<div>
+    <p style="color: #000000; font-size: 20px; font-weight:bold;">The results of the test are below:</p>
+    <table>
+      <tr>
+          <td>Unique Test Number:</td>
+          <td>{{ account['utn'] }}</td>
+      </tr>
+        <tr>
+            <td>Patient Name:</td>
+            <td>{{ patient['fullname'] }}</td>
+        </tr>
+        <tr>
+            <td>Patient Email:</td>
+            <td>{{ patient['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Test Xray Image:</td>
+            <td><img src="{{ url_for('send_file', filename = account['image'])}}" style ="max-width: 150px; max-height: 250px;"></td>
+        </tr>
+        <tr>
+            <td>Test Results:</td>
+            <td>{{ account['results'] }}</td>
+        </tr>
+        {%if flag == 1%}
+        {%if account['results'] != None %}
+        <tr>
+          {%if diagnosis%}
+            <td>Diagnosis</td>
+            <td>{{ diagnosis['diagnosis'] }}</td>
+          {%else%}
+           <form action="{{url_for('updatediagnosis')}}" method="post">
+             <td><textarea rows="5" cols="50" name="diagnosis" id="diagnosis" required>Please prescribe for the diagnosis!</textarea></td>
+             <td>
+              <input type="hidden" name="utn" value="{{ account['utn'] }}" id="utn">
+              <input type="submit" value="Send Prescription">
+              </td>
+            </form>
+          {%endif%}
+        </tr>
+        {%endif%}
+        {%endif%}
+    </table>
+    <a href="{{ url_for('home') }}">
+        <button type="submit">Home</button>
+    </a>
+</div>
+{% endblock %}

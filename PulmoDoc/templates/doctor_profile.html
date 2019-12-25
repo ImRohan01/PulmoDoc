@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<div>
+    <p style="color: #000000; font-size: 20px; font-weight:bold;">Your account details are below:</p>
+    <table>
+        <tr>
+            <td>Fullname:</td>
+            <td>{{ account['fullname'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ account['phone'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ account['password'] }}</td>
+        </tr>
+        <tr>
+            <td>Role:</td>
+            <td>{{ account['role'] }}</td>
+        </tr>
+        <tr>
+            <td>Degree:</td>
+            <td>{{ account['degree'] }}</td>
+        </tr>
+        <tr>
+          {%if account['image'] != None%}
+            <td>Degree Image:</td>
+            <td ><img src="{{ url_for('send_file', filename = account['image'])}}" id="degimg"></td>
+          {%endif%}
+        </tr>
+    </table>
+    <a href="{{ url_for('changedocprofile') }}">
+        <button type="submit">Edit Profile</button>
+    </a>
+</div>
+{% endblock %}

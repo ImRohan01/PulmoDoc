@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h2>Edit Profile</h2>
+<div>
+    <p style="color: #000000; font-size: 20px; font-weight:bold;">Edit account details below:</p>
+    <form method = "post" action="{{ url_for('editpatprofile') }}">
+    <table>
+        <tr>
+            <td>Fullname:</td>
+            <td><input type="text" name="fullname" id="fullname" placeholder="{{account['fullname']}}"></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="phone" name="phone" id="phone" placeholder="{{account['phone']}}"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" id="email" placeholder="{{account['email']}}"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" id="password" placeholder="{{account['password']}}"></td>
+        </tr>
+    </table>
+        <button type="submit">Save Profile</button>
+    </form>
+</div>
+{% endblock %}

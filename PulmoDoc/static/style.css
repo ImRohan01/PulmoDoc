@@ -1,0 +1,270 @@
+* {
+  	box-sizing: border-box;
+  	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  	font-size: 16px;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-size: 100% ;
+  	margin: 0;
+}
+
+.msg{
+  font-size: 20px;
+}
+.logreg{
+  	background-image: url("demo.png");
+    background-size: 70% 100%;
+  	margin: 0;
+}
+
+.parent{
+  width: 500px;
+  font-family: Impact, sans-serif;
+  float:right;
+}
+.login, .register {
+    height: 100vh;
+    overflow: auto;
+  	width: 500px;
+  	background-color: #C0C0C0;
+  	box-shadow: 9px 9px 9px 9px rgba(0, 0, 0, 0.3);
+}
+.login h1, .register h1 {
+    margin: 0;
+  	text-align: center;
+  	color: #ffffff;
+    background-color: #000000;
+  	font-size: 30px;
+  	padding: 20px 0 20px 0;
+  	border-bottom: 1px solid #000000;
+}
+.login .links, .register .links {
+  	display: flex;
+  	padding: 0 15px;
+    background-color: #A9A9A9;
+    border-bottom: 1px solid #000000;
+}
+.login .links a, .register .links a {
+  	color: #000000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  	text-decoration: none;
+  	display: inline-flex;
+  	padding: 0 10px 10px 10px;
+  	font-weight: bold;
+}
+.login .links a:hover, .register .links a:hover {
+  	color: rgba(0,0,0,0.5);
+}
+.login .links a.active, .register .links a.active {
+  	border-bottom: 3px solid #000000;
+  	color: #000000;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: dimgrey;
+   opacity: 1;
+}
+
+.login form, .register form {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding-top: 20px;
+}
+.login form label, .register form label {
+  	display: flex;
+    border-radius: 10px;
+  	justify-content: center;
+  	align-items: center;
+  	width: 50px;
+  	height: 50px;
+    margin-top: 25px;
+    margin-left:50px;
+  	background-color: #000000;
+  	color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"], .login form input[type="email"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"], .register form select[type="text"], .login form select[type="text"] {
+  	width: 310px;
+  	height: 50px;
+    color: #000000;
+    border-radius: 10px;
+  	border: 1px solid #000000;
+  	margin-bottom: 25px;
+    margin-top: 25px;
+    margin-right:50px;
+  	padding: 0 15px;
+}
+
+.login form input[type="submit"]{
+  	width: 100%;
+  	padding: 15px;
+  	margin-top: 248px;
+  	background-color: #000000;
+  	border: 0;
+  	cursor: pointer;
+    font-size: 20px;
+  	font-weight: bold;
+  	color: #ffffff;
+  	transition: background-color 0.2s;
+}
+.register form input[type="submit"]
+{
+  width: 100%;
+  padding: 15px;
+  margin-top: 48px;
+  background-color: #000000;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
+  	background-color: #696969;
+  	transition: background-color 0.2s;
+}
+.navtop {
+  	background-color: #000000;
+  	height: 90px;
+  	width: 100%;
+  	border: 0;
+}
+.navtop div {
+  	display: flex;
+  	margin: 0 auto;
+  	width: 1400px;
+  	height: 100%;
+}
+.navtop div h1, .navtop div a {
+  	display: inline-flex;
+  	align-items: center;
+}
+.navtop div h1 {
+  	flex: 1;
+  	font-size: 24px;
+  	padding: 0;
+  	margin: 0;
+  	color: #ffffff;
+  	font-weight: normal;
+}
+.navtop div a {
+  	padding: 0 20px;
+  	text-decoration: none;
+  	color: #ffffff;
+    font-size: 20px;
+  	font-weight: bold;
+}
+.navtop div a i {
+  	padding: 2px 8px 0 0;
+    color: white;
+    size: 20px;
+}
+.navtop div a:hover {
+  	color: #A9A9A9;
+}
+body.loggedin {
+  	background-color: #C0C0C0;
+}
+.content {
+  	width: 1400px;
+  	margin: 0 auto;
+}
+.content h2 {
+    font-family: 'Acme';
+  	margin: 0;
+    -webkit-text-stroke: 1.5px white;
+  	padding-top: 20px;
+    padding-bottom: 20px;
+  	font-size: 35px;
+  	border-bottom: 2px solid #000000;
+  	color: #000000;
+}
+.content > p, .content > div {
+  	/*box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);*/
+  	margin: 25px 0;
+  	padding: 25px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 20px;
+	  background-color: #fff;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+  color: #000000;
+  font-size: 18px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+	font-weight: bold;
+	color: #000000;
+  font-size: 20px;
+	padding-right: 15px;
+}
+.content > div form button {
+  padding: 2px;
+  margin: 5px;
+}
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+#welcome{
+  font-size: 30px;
+  font-family: 'Tinos';
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: #d6d6c2;
+  border: 1px solid #000000;
+  color: black;
+}
+#ab{
+  text-decoration: none;
+  font-weight: bold;
+  color: rgba(0,0,0)
+}
+#ab:hover {
+  color: rgba(0,0,0,0.75)
+}
+#ab:active {
+  color: rgba(0,0,0,0.75)
+}
+#AdminTable{
+  padding: 10px;
+  background-color: #C0C0C0;
+  border-radius: 0px;
+  border: 0px;
+}
+#AdminTable > table td{
+  width: 450px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  padding: 30px 50px 20px 50px;
+}
+#AdminTable > table td a {
+  font-size: 20px;
+  padding: 40px 0px 40px 0px;
+}
+#Feedback{
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #000000;
+}
+
+#degimg{
+  width: 50px;
+  height: 45px;
+  -webkit-transition: width 2s, height 4s;
+  transition: width 2s, height 4s;
+}
+
+#degimg:hover {
+  width: 200px;
+  height: 200px;
+}
+<

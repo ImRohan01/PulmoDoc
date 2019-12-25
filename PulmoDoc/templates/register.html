@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="logreg">
+		<div class="parent">
+		<div class="register">
+			<h1 style="font-family: 'Lobster', serif; font-size: 36px;">Register</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}" class="active">Register</a>
+			</div>
+			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+				<label for="fullname">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="fullname" placeholder="Fullname" id="fullname" required>
+				<label for="phone">
+					<i class="fa fa-phone-square"></i>
+				</label>
+				<input type="text" name="phone" placeholder="Phone" id="phone" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<label for="role">
+					<i class="fas fa-user"></i>
+				</label>
+				<select type="text" id = "role" name="role">
+					<option value="Doctor">Doctor</option>
+					<option value="Patient">Patient</option>
+					<option value="Admin">Admin</option>
+				</select>
+					<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+				</form>
+  			</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+<h2>{{ name }}'s Feedback</h2>
+<div>
+    <table>
+      <tr>
+        <td>Feedback Number:</td>
+        <td>{{ account['fbackid']}}</td>
+      </tr>
+      <tr>
+        <td>Feedback:</td>
+        <td>{{account['feedback']}}</td>
+      </tr>
+      <tr>
+        <td><a href="{{ url_for('viewfeedback') }}">
+            <button>Back</button>
+        </a></td>
+      </tr>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+ {% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p id="welcome">Welcome back {{ fullname }}!</p>
+<div id = "AdminTable">
+  <table>
+      <tr>
+          <td><img src="{{url_for('static', filename = "img/cartoon.jpg")}}" alt="Test Xray Image" height="200px" width="350px"><a href="{{ url_for('totestresults') }}" id="ab">TEST X-RAY IMAGES</a></td>
+          <td><img src="{{url_for('static', filename = "img/cartoonpatient.jpg")}}" alt="Patient Test Details" height="200px" width="350px"><a href = "{{ url_for('testdetails') }}" id="ab">PATIENT TEST DETAILS</a></td>
+          <td><img src="{{url_for('static', filename = "img/feedback.jpg")}}" alt="Feedback" height="200px" width="350px"><a href="{{ url_for('feedback') }}" id="ab">SEND FEEDBACK TO DEVELOPER</a></td>
+      </tr>
+  </table>
+</div>
+{% endblock %}

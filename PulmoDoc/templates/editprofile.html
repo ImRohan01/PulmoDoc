@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h2>Edit Profile</h2>
+<div>
+    <p>Edit account details below:</p>
+    <table>
+        <tr>
+            <td>Fullname:</td>
+            <td><input type="text" name="fullname" placeholder={{ account['fullname']}} id="fullname"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" placeholder={{ account['email']}} id="email"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" placeholder={{ account['password']}} id="password" required></td>
+        </tr>
+        <tr>
+            <td>Role:</td>
+            <td>{{ account['role'] }}</td>
+        </tr>
+        <tr>
+            <td>Degree:</td>
+            <td>{{ account['degree'] }}</td>
+        </tr>
+        <tr>
+            <td>Degree Image:</td>
+            <td>{{ account['image'] }}</td>
+        </tr>
+    </table>
+    <form action="{{ url_for('home') }}">
+        <button type="edit profile">Edit Profile</button>
+    </form>
+</div>
+{% endblock %}

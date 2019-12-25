@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}Test Results{% endblock %}
+
+{% block content %}
+<h2>Test Results</h2>
+<div>
+    <p style="color: #000000; font-size: 20px; font-weight:bold;">The results of the test are below:</p>
+    <table>
+      <tr>
+          <td>Unique Test Number:</td>
+          <td>{{ account['utn'] }}</td>
+      </tr>
+        <tr>
+            <td>Patient Name:</td>
+            <td>{{ patient['fullname'] }}</td>
+        </tr>
+        <tr>
+            <td>Patient Email:</td>
+            <td>{{ patient['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Test Xray Image:</td>
+            <td><img src="{{ url_for('send_file', filename = account['image'])}}" style ="max-width: 150px; max-height: 250px;"></td>
+        </tr>
+        <tr>
+            <td>Test Results:</td>
+            <td>{{ account['results'] }}</td>
+        </tr>
+        {%if account['results'] != None %}
+        <tr>
+          {%if diagnosis%}
+            <td>Diagnosis</td>
+            <td>{{ diagnosis['diagnosis'] }}</td>
+          {%else%}
+          <td>Diagnosis</td>
+          <td>The doctor hasn't sent any prescription for diagnosis yet! It will be sent soon!</td>
+          {%endif%}
+        </tr>
+        {%endif%}
+    </table>
+    <a href="{{ url_for('home') }}">
+        <button type="submit">Home</button>
+    </a>
+</div>
+{% endblock %}

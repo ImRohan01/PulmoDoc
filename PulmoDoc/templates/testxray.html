@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Test Xray Images{% endblock %}
+
+{% block content %}
+<h2>Test Xray Images</h2>
+<div>
+  <div class="msg">{{ msg }}</div>
+  <form action="{{url_for('testxray')}}" method="POST" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td>Unique Test Number</td>
+        <td><input type="text" name="utn" id="utn" required></td>
+      </tr>
+        <tr>
+          <td>Patient Name</td>
+          <td><input type="text" name="patname" id="patname" required></td>
+        </tr>
+        <tr>
+          <td>Patient Email</td>
+          <td><input type="email" name="patmail" id="patmail" required></td>
+        </tr>
+        <tr>
+          <td>Select Image for Testing</td>
+          <td><input type="file" name="image" id="image" required></td>
+        </tr>
+    </table>
+        <button type="submit">Test Image</button>
+  </form>
+</div>
+{% endblock %}

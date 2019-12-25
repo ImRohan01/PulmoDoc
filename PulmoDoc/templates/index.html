@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="logreg">
+		<div class="parent">
+		<div class="login">
+			<h1 style="font-family: 'Lobster', serif; font-size: 36px; ">Login</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}" class="active">Login</a>
+				<a href="{{url_for('register')}}">Register</a>
+			</div>
+			<form action="{{ url_for('login') }}" method="post">
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="text" name="email" placeholder="E-mail" id="email" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<label for="Role">
+					<i class="fas fa-user"></i>
+				</label>
+				<select type="text" id = "role" name="role">
+					<option value="Doctor">Doctor</option>
+					<option value="Patient">Patient</option>
+					<option value="Admin">Admin</option>
+				</select>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</div>
+	</body>
+</html>

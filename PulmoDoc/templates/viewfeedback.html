@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p id="welcome">Welcome back {{ fullname }}!</p>
+<div id="Feedback">
+  <div><h2 style="padding-left: 10px;">Doctor Feedbacks</h2></div>
+  <table>
+    <tr>
+      <td style="text-align: center; width:250px; padding-top: 15px; padding-bottom: 15px;">Feedback Id</td>
+      <td style="width:250px; font-weight: bold; padding-top: 15px; padding-bottom: 15px;" >Doctor Name</td>
+      <td style="width:250px; font-weight: bold; padding-top: 15px; padding-bottom: 15px;" >View Feedback</td>
+    </tr>
+      {%for account in account1%}
+      <tr>
+          <td style="text-align: center; width:250px;">{{ account['fbackid'] }}</td>
+          <td style="width:250px;" >{{ name1[account['fbackid']] }}</td>
+          <td><form action="{{url_for('dispfeedback')}}" method="post">
+            <input type="hidden" name="fbackid" value="{{account['fbackid']}}" id="fbackid">
+            <input type="hidden" name="name" value="{{ name1[account['fbackid']] }}" id="name">
+            <input type="submit" value="View Feedback">
+            </form>
+          </td>
+      </tr>
+      {%endfor%}
+  </table>
+  <div><h2 style="padding-left: 10px; margin-top: 50px; border-top:2px solid #000000;">Patient Feedbacks</h2></div>
+  <table>
+    <tr>
+      <td style="text-align: center; width:250px; padding-top: 10px; padding-bottom: 15px;">Feedback Id</td>
+      <td style="width:250px; font-weight: bold; padding-top: 10px; padding-bottom: 15px;" >Patient Name</td>
+      <td style="width:250px; font-weight: bold; padding-top: 10px; padding-bottom: 15px;" >View Feedback</td>
+    </tr>
+    {%for account in account2%}
+    <tr>
+        <td style="text-align: center;width:250px;">{{ account['fbackid'] }}</td>
+        <td style="width:250px;" >{{ name2[account['fbackid']] }}</td>
+        <td><form action="{{url_for('dispfeedback')}}" method="post">
+          <input type="hidden" name="fbackid" value="{{account['fbackid']}}" id="fbackid">
+          <input type="hidden" name="name" value="{{ name2[account['fbackid']] }}" id="name">
+          <input type="submit" value="View Feedback">
+          </form>
+        </td>
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+{% endblock %}

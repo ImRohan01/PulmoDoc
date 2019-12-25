@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+<h2>Feedback to Developer</h2>
+<div>
+  <div class="msg">{{ msg }}</div>
+  <form action="{{url_for('feedback')}}" method="POST" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td>Unique Test Number</td>
+        <td><input type="text" name="utn" id="utn" required></td>
+      </tr>
+      <tr>
+        <td>Feedback</td>
+        <td><textarea rows="5" cols="50" name="feedback" id="feedback" required></textarea></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Send Feedback</button></td>
+        <td><a href="{{ url_for('home') }}">
+            <button type="submit">Home</button>
+        </a></td>
+      </tr>
+    </table>
+  </form>
+</div>
+{% endblock %}
